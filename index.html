@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Advanced Sorting Visualizer</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+    <h1>Advanced Sorting Visualizer</h1>
+    <div class="container">
+        <div class="left-panel">
+            <form id="sockForm">
+                <h2>Enter Sock Values</h2>
+                <div id="sockInputs"></div>
+                <button type="button" id="randomizeBtn">Randomize</button>
+                <br/><br/>
+                <label for="sortType">Sorting Type:</label>
+                <select id="sortType">
+                    <option value="bubble">Bubble Sort</option>
+                    <option value="selection">Selection Sort</option>
+                    <option value="linear">Linear Sort</option>
+                    <option value="merge">Merge Sort</option>
+                    <option value="heap">Heap Sort</option>
+                </select>
+                <br/><br/>
+                <button type="submit">Start Sorting</button>
+            </form>
+        </div>
+        <div class="right-panel">
+            <canvas id="myCanvas"></canvas>
+        </div>
+    </div>
+
+    <script src="bird.js"></script>
+    <script src="physics.js"></script>
+    <script src="segment.js"></script>
+    <script src="particle.js"></script>
+    <script src="math.js"></script>
+    <script src="sock.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
