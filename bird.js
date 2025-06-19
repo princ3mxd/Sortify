@@ -273,14 +273,10 @@ class Bird{
 
     draw(ctx){
         const changed=this.#update();
-        
         this.#drawFoot(ctx,this.rKnee,this.rFoot);
         this.#drawFoot(ctx,this.lKnee,this.lFoot);
-        
         ctx.lineWidth=1;
-
         this.#drawHead(ctx);
-
         return changed;
     }
 }
