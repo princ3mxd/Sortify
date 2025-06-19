@@ -1,36 +1,96 @@
 <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorting Visualizer</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-    <title>Advanced Sorting Visualizer</title>
-    <link rel="stylesheet" href="style.css"/>
-</head>
-
-<body>
-    <div class="cloud-heading">
-        <h1>Sorting Visualizer</h1>
+  <body>
+    <header class="saas-header">
+      <a href="/" class="logo">Sortify</a>
+    </header>
+    <main class="classic-main">
+      <section class="classic-controls">
+        <h1 class="classic-title">Sorting Visualizer</h1>
+        <form id="sockForm">
+          <div class="form-group">
+            <label for="sockInputs">Sock Values</label>
+            <div id="sockInputs"></div>
+          </div>
+          <button
+            type="button"
+            id="randomizeBtn"
+            class="classic-btn classic-btn-random"
+          >
+            Randomize Array
+          </button>
+          <div class="form-group">
+            <label for="sortType">Sorting Type</label>
+            <select id="sortType">
+              <option value="bubble">Bubble Sort</option>
+              <option value="selection">Selection Sort</option>
+              <option value="linear">Linear Sort</option>
+              <option value="merge">Merge Sort</option>
+              <option value="heap">Heap Sort</option>
+            </select>
+          </div>
+          <button type="submit" class="classic-btn classic-btn-sort">
+            Sort !
+          </button>
+        </form>
+      </section>
+      <section class="classic-visualization">
+        <canvas id="myCanvas"></canvas>
+      </section>
+    </main>
+    <div
+      id="sortingDoneOverlay"
+      class="sorting-done-overlay"
+      style="display: none"
+    >
+      <div class="sorting-done-modal">
+        <div class="checkmark-circle">
+          <svg viewBox="0 0 52 52">
+            <circle
+              class="checkmark-circle-bg"
+              cx="26"
+              cy="26"
+              r="25"
+              fill="none"
+            />
+            <path class="checkmark-check" fill="none" d="M14 27l7 7 16-16" />
+          </svg>
+        </div>
+        <div class="sorting-done-text">Sorting Completed!</div>
+      </div>
     </div>
-    <div class="container">
-        <div class="left-panel">
-            <form id="sockForm">
-                <h2>Enter Sock Values</h2>
-                <div id="sockInputs"></div>
-                <button type="button" id="randomizeBtn">Randomize</button>
-                <br/><br/>
-                <label for="sortType">Sorting Type:</label>
-                <select id="sortType">
-                    <option value="bubble">Bubble Sort</option>
-                    <option value="selection">Selection Sort</option>
-                    <option value="linear">Linear Sort</option>
-                    <option value="merge">Merge Sort</option>
-                    <option value="heap">Heap Sort</option>
-                </select>
-                <br/><br/>
-                <button type="submit">Start Sorting</button>
-            </form>
-        </div>
-        <div class="right-panel">
-            <canvas id="myCanvas"></canvas>
-        </div>
+
+    <div class="mountains">
+      <svg
+        viewBox="0 0 1920 220"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M0 220L320 120L480 180L640 100L800 200L960 80L1120 180L1280 120L1440 200L1600 100L1760 180L1920 120V220H0Z"
+          fill="#b0c4b1"
+        />
+        <path
+          d="M0 220L320 180L480 200L640 160L800 220L960 140L1120 200L1280 180L1440 220L1600 160L1760 200L1920 180V220H0Z"
+          fill="#7d9685"
+        />
+        <path
+          d="M0 220L320 200L480 220L640 200L800 220L960 200L1120 220L1280 200L1440 220L1600 200L1760 220L1920 200V220H0Z"
+          fill="#5e7263"
+        />
+      </svg>
     </div>
 
     <script src="bird.js"></script>
@@ -40,13 +100,5 @@
     <script src="math.js"></script>
     <script src="sock.js"></script>
     <script src="script.js"></script>
-    <div class="mountains">
-        <svg viewBox="0 0 1920 220" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0 220L320 120L480 180L640 100L800 200L960 80L1120 180L1280 120L1440 200L1600 100L1760 180L1920 120V220H0Z" fill="#b0c4b1"/>
-            <path d="M0 220L320 180L480 200L640 160L800 220L960 140L1120 200L1280 180L1440 220L1600 160L1760 200L1920 180V220H0Z" fill="#7d9685"/>
-            <path d="M0 220L320 200L480 220L640 200L800 220L960 200L1120 220L1280 200L1440 220L1600 200L1760 220L1920 200V220H0Z" fill="#5e7263"/>
-        </svg>
-    </div>
-</body>
-
+  </body>
 </html>
